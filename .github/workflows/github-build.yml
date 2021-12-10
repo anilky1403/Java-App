@@ -13,9 +13,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
-        ### --- GRANT PERMISSION FOR GRADLEW --- ###
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-        ### --------- GRADLE BUILD ---------- ###
-      - name: Build Application with Gradle
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+      - name: Build with Gradle
         run: ./gradlew build
